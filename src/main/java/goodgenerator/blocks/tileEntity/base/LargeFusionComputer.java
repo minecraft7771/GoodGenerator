@@ -222,7 +222,10 @@ public abstract class LargeFusionComputer extends GT_MetaTileEntity_TooltipMulti
                 mUpdate = 50;
                 mUpdated = false;
             }
-            if (--mUpdate == 0 || --mStartUpCheck == 0 || cyclicUpdate_EM() || aBaseMetaTileEntity.hasWorkJustBeenEnabled()) {
+            if (--mUpdate == 0
+                    || --mStartUpCheck == 0
+                    || cyclicUpdate_EM()
+                    || aBaseMetaTileEntity.hasWorkJustBeenEnabled()) {
                 checkStructure(true, aBaseMetaTileEntity);
             }
             if (mStartUpCheck < 0) {
