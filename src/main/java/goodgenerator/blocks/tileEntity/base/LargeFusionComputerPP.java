@@ -70,7 +70,7 @@ public abstract class LargeFusionComputerPP extends GT_MetaTileEntity_TooltipMul
                                     .dot(2)
                                     .buildAndChain(x.getGlassBlock(), x.getGlassMeta())))
                             .addElement('E', lazy(x -> GT_HatchElementBuilder.<LargeFusionComputerPP>builder()
-                                    .atLeast(HatchElement.EnergyMulti)
+                                    .atLeast(HatchElement.EnergyMulti.or(GT_HatchElement.Energy))
                                     .adder(LargeFusionComputerPP::addEnergyInjector)
                                     .casingIndex(x.textureIndex())
                                     .dot(3)
@@ -173,7 +173,7 @@ public abstract class LargeFusionComputerPP extends GT_MetaTileEntity_TooltipMul
         if (mMachine) {
             return -1;
         } else {
-            return survivialBuildPiece(MAIN_NAME, stackSize, 23, 3, 40, elementBudget, source, actor, false, true);
+            return survivialBuildPiece(MAIN_NAME, stackSize, 23, 3, 40,  elementBudget >= 200 ? elementBudget : Math.min(200, elementBudget * 5), source, actor, false, true);
         }
     }
 
@@ -224,7 +224,14 @@ public abstract class LargeFusionComputerPP extends GT_MetaTileEntity_TooltipMul
                 this.mEUStore = aBaseMetaTileEntity.getStoredEU();
                 checkRecipe(mInventory[1]);
             }
-            if (--mUpdate == 0 || --mStartUpCheck == 0) {
+            if (mUpdated) {
+                mUpdate = 50;
+                mUpdated = false;
+            }
+            if (--mUpdate == 0
+                || --mStartUpCheck == 0
+                || cyclicUpdate_EM()
+                || aBaseMetaTileEntity.hasWorkJustBeenEnabled()) {
                 checkStructure(true, aBaseMetaTileEntity);
             }
             if (mStartUpCheck < 0) {
