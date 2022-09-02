@@ -174,7 +174,17 @@ public abstract class LargeFusionComputer extends GT_MetaTileEntity_TooltipMulti
         if (mMachine) {
             return -1;
         } else {
-            return survivialBuildPiece(MAIN_NAME, stackSize, 23, 3, 40,  elementBudget >= 200 ? elementBudget : Math.min(200, elementBudget * 5), source, actor, false, true);
+            return survivialBuildPiece(
+                    MAIN_NAME,
+                    stackSize,
+                    23,
+                    3,
+                    40,
+                    elementBudget >= 200 ? elementBudget : Math.min(200, elementBudget * 5),
+                    source,
+                    actor,
+                    false,
+                    true);
         }
     }
 

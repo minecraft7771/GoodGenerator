@@ -173,7 +173,17 @@ public abstract class LargeFusionComputerPP extends GT_MetaTileEntity_TooltipMul
         if (mMachine) {
             return -1;
         } else {
-            return survivialBuildPiece(MAIN_NAME, stackSize, 23, 3, 40,  elementBudget >= 200 ? elementBudget : Math.min(200, elementBudget * 5), source, actor, false, true);
+            return survivialBuildPiece(
+                    MAIN_NAME,
+                    stackSize,
+                    23,
+                    3,
+                    40,
+                    elementBudget >= 200 ? elementBudget : Math.min(200, elementBudget * 5),
+                    source,
+                    actor,
+                    false,
+                    true);
         }
     }
 
@@ -229,9 +239,9 @@ public abstract class LargeFusionComputerPP extends GT_MetaTileEntity_TooltipMul
                 mUpdated = false;
             }
             if (--mUpdate == 0
-                || --mStartUpCheck == 0
-                || cyclicUpdate_EM()
-                || aBaseMetaTileEntity.hasWorkJustBeenEnabled()) {
+                    || --mStartUpCheck == 0
+                    || cyclicUpdate_EM()
+                    || aBaseMetaTileEntity.hasWorkJustBeenEnabled()) {
                 checkStructure(true, aBaseMetaTileEntity);
             }
             if (mStartUpCheck < 0) {
