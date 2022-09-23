@@ -234,8 +234,7 @@ public abstract class LargeFusionComputerPP extends GT_MetaTileEntity_TooltipMul
                 this.mEUStore = aBaseMetaTileEntity.getStoredEU();
                 checkRecipe(mInventory[1]);
             }
-            if (--mUpdate == 0
-                    || --mStartUpCheck == 0) {
+            if (--mUpdate == 0 || --mStartUpCheck == 0) {
                 checkStructure(true, aBaseMetaTileEntity);
             }
             if (mStartUpCheck < 0) {
