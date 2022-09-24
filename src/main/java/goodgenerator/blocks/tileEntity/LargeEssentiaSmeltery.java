@@ -28,7 +28,6 @@ import gregtech.api.util.GT_Multiblock_Tooltip_Builder;
 import java.util.ArrayList;
 import java.util.Map;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockAir;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
