@@ -239,9 +239,9 @@ public abstract class LargeFusionComputerPP extends GT_MetaTileEntity_TooltipMul
                 mUpdated = false;
             }
             if (--mUpdate == 0
-                || --mStartUpCheck == 0
-                || cyclicUpdate_EM()
-                || aBaseMetaTileEntity.hasWorkJustBeenEnabled()) {
+                    || --mStartUpCheck == 0
+                    || cyclicUpdate_EM()
+                    || aBaseMetaTileEntity.hasWorkJustBeenEnabled()) {
                 if (mUpdate <= -1000) {
                     mUpdate = 5000;
                 }
