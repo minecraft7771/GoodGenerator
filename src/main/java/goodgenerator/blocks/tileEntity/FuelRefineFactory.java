@@ -99,17 +99,16 @@ public class FuelRefineFactory extends GT_MetaTileEntity_TooltipMultiBlockBase_E
                     }))
                     .addElement(
                             'X',
-                                    buildHatchAdder(FuelRefineFactory.class)
-                                            .atLeast(
-                                                    GT_HatchElement.Maintenance,
-                                                    GT_HatchElement.InputHatch,
-                                                    GT_HatchElement.InputBus,
-                                                    GT_HatchElement.OutputHatch,
-                                                    HatchElement.EnergyMulti.or(GT_HatchElement.Energy))
-                                            .casingIndex(50)
-                                            .dot(1)
-                                            .buildAndChain(ofBlock(Loaders.FRF_Casings, 0))
-                                    )
+                            buildHatchAdder(FuelRefineFactory.class)
+                                    .atLeast(
+                                            GT_HatchElement.Maintenance,
+                                            GT_HatchElement.InputHatch,
+                                            GT_HatchElement.InputBus,
+                                            GT_HatchElement.OutputHatch,
+                                            HatchElement.EnergyMulti.or(GT_HatchElement.Energy))
+                                    .casingIndex(50)
+                                    .dot(1)
+                                    .buildAndChain(ofBlock(Loaders.FRF_Casings, 0)))
                     .addElement('C', ofBlock(Loaders.FRF_Casings, 0))
                     .addElement('G', ofBlock(Loaders.fieldRestrictingGlass, 0))
                     .addElement(

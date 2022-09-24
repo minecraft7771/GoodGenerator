@@ -223,13 +223,11 @@ public class CoolantTower extends GT_MetaTileEntity_TooltipMultiBlockBase_EM
                     .addElement('C', ofFrame(Materials.TungstenCarbide))
                     .addElement(
                             'H',
-                            ofChain(
-                                    buildHatchAdder(CoolantTower.class)
-                                            .atLeast(GT_HatchElement.InputHatch, GT_HatchElement.OutputHatch)
-                                            .casingIndex(CASING_INDEX)
-                                            .dot(1)
-                                            .buildAndChain(ofBlockAnyMeta(GregTech_API.sBlockConcretes, 8))
-                                    ))
+                            ofChain(buildHatchAdder(CoolantTower.class)
+                                    .atLeast(GT_HatchElement.InputHatch, GT_HatchElement.OutputHatch)
+                                    .casingIndex(CASING_INDEX)
+                                    .dot(1)
+                                    .buildAndChain(ofBlockAnyMeta(GregTech_API.sBlockConcretes, 8))))
                     .build();
         }
         return multiDefinition;
