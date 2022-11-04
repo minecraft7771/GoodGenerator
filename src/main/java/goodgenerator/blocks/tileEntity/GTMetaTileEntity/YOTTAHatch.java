@@ -275,14 +275,13 @@ public class YOTTAHatch extends GT_MetaTileEntity_Hatch
                 || host.mFluidName.equals("")
                 || host.mFluidName.equals(resource.getFluid().getName())) {
             host.mFluidName = resource.getFluid().getName();
-            if (host.mStorage.subtract(host.mStorageCurrent).compareTo(BigInteger.valueOf(resource.amount)) >= 0
-                    || host.getIsVoidExcessEnabled()) {
+            if (host.mStorage.subtract(host.mStorageCurrent).compareTo(BigInteger.valueOf(resource.amount)) >= 0) {
                 if (doFill) host.addFluid(resource.amount);
                 return resource.amount;
             } else {
                 int added = host.mStorage.subtract(host.mStorageCurrent).intValue();
                 if (doFill) host.addFluid(added);
-                return added;
+                return host.getIsVoidExcessEnabled() ? resource.amount : added;
             }
         }
         return 0;
