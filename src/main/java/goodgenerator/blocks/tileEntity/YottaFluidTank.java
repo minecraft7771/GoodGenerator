@@ -416,7 +416,7 @@ public class YottaFluidTank extends GT_MetaTileEntity_TooltipMultiBlockBase_EM
         if (aSide == getBaseMetaTileEntity().getFrontFacing()) {
             voidExcessEnabled ^= true;
             aPlayer.addChatMessage(new ChatComponentTranslation(
-                    voidExcessEnabled ? "interaction.voidexcess.enabled" : "interaction.voidexcess.disabled"));
+                    voidExcessEnabled ? "yottank.chat.voidExcessEnabled" : "yottank.chat.voidExcessDisabled"));
             return true;
         }
         return false;
